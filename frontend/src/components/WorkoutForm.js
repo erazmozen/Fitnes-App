@@ -38,7 +38,7 @@ const WorkoutForm = () => {
       setTitle("");
       setLoad("");
       setReps("");
-      emptyFields([]);
+      setEmptyFields([]);
       dispatch({ type: "CREATE_WORKOUT", payload: json });
       console.log("jedan dodat, izgleda ovako:", json);
     }
