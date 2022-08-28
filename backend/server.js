@@ -21,12 +21,10 @@ app.use((req, res, next) => {
   next();
 });
 
-console.log();
-
 // Rutes
 app.use("/api/workouts", workoutRoutes);
 
-// Povezi sa bazom (asymc)
+// Povezi sa bazom (async)
 mongoose
   .connect(process.env.MONG_URI)
   .then(() => {

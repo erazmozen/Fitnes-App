@@ -41,10 +41,9 @@ const createWorkout = async (req, res) => {
     emptyFields.push("reps");
   }
 
+  // ako je veci od 0 za res kacimo error (ima praznih polja)
   if (emptyFields.length > 0) {
-    return res
-      .status(400)
-      .json({ error: "Please fill in all fields", emptyFields });
+    return res.status(400).json({ error: "Popuni sva polja!", emptyFields });
   }
 
   // dodaj u databazu
