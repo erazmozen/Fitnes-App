@@ -1,17 +1,14 @@
-# mern
+Fitnes App
 
-API ENDPOINTS
+Backend:
+  Node.js
+  Express
+  MongoDB
+  Mongoose
+ 
+ Frontend:
+  React
+  
 
-GET /workouts --> Uzima workout dekumente
-POST /workouts --> Kreira workout dekument
-GET /workouts/:id --> Uzima jedan workout dekument
-DELETE /workouts/:id --> Brise jedan workout dekument
-PATCH /workouts/:id --> Update jedan workouts dekument
+https://user-images.githubusercontent.com/67731959/187084243-0aa0a6e9-8837-453e-a626-1c65af4651b0.mp4
 
-MONGOOSE - ODM (Object Data Modeling) Library
-
-Pakuje MongoDB kako bismo mogli da koristimo razne metoda za kreiranje i ukanjanje dokumenata. Takdje nam daje mogucnost da deklarisemo modele i skeme kako bismo obezbedili striktniji data structure
-
-Npr skema za blog dokument koja kaze da svaki blog mora da ima title, body i ostatak
-
-Takodje ga koristimo za pobezivanje sa databazom
