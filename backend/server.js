@@ -1,6 +1,8 @@
 require("dotenv").config(); // trazimo dontenv / .config je metoda
 // Preko .config kacimo env vars na process objekat
 const express = require("express");
+// Objekat koji koristimo za konekciju
+const mongoose = require("mongoose");
 // Pravimo drugi file koji ce da sadrzi sve rute
 const workoutRoutes = require("./routes/workouts");
 // kreiramo express app
@@ -19,10 +21,19 @@ app.use((req, res, next) => {
   next();
 });
 
+console.log();
+
 // Rutes
 app.use("/api/workouts", workoutRoutes);
 
-// slusamo za request
-app.listen(process.env.PORT, () => {
-  console.log("slusam na", process.env.PORT);
-});
+// Povezi sa bazom (asymc)
+mongoose
+  .connect(process.env.MONG_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log("slusam na", process.env.PORT);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
